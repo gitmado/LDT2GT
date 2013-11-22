@@ -1,0 +1,23 @@
+﻿  PointCloudTriangulation.cpp
+PointCloudTriangulation.cpp(8): warning C4305: '=' : truncation from 'double' to 'float'
+PointCloudTriangulation.cpp(12): warning C4305: '=' : truncation from 'double' to 'float'
+PointCloudTriangulation.cpp(56): warning C4018: '<' : signed/unsigned mismatch
+PointCloudTriangulation.cpp(103): warning C4018: '<' : signed/unsigned mismatch
+PointCloudTriangulation.cpp(315): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+PointCloudTriangulation.cpp(315): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+PointCloudTriangulation.cpp(318): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+PointCloudTriangulation.cpp(318): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+PointCloudTriangulation.cpp(321): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+PointCloudTriangulation.cpp(321): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+PointCloudTriangulation.cpp(413): warning C4018: '<' : signed/unsigned mismatch
+PointCloudTriangulation.cpp(414): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+PointCloudTriangulation.cpp(420): warning C4018: '<' : signed/unsigned mismatch
+PointCloudTriangulation.cpp(422): warning C4018: '<' : signed/unsigned mismatch
+PointCloudTriangulation.cpp(437): warning C4018: '<' : signed/unsigned mismatch
+PointCloudTriangulation.cpp(445): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+PointCloudTriangulation.cpp(472): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+PointCloudTriangulation.cpp(547): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+LINK : warning LNK4068: /MACHINE not specified; defaulting to X86
+.NETFramework,Version=v4.0.AssemblyAttributes.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+AssemblyInfo.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+  PointCloudTriangulation.vcxproj -> D:\Projects\_projects\PointCloudTriangulation\PointCloudTriangulation\Debug\PointCloudTriangulation.lib
