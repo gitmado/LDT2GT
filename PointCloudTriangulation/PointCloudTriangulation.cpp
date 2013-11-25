@@ -390,7 +390,14 @@ Array2D<bool> DeleunayTriangulator::computeLocalTriangulation(int i, PCTMeshGrap
 
 		if (visualization){
 
-			neighVis[i].E_local_visualize = E_local.copy();
+			for (int x=0; x<pMesh->numOfVertices; x++)
+				for (int y=x; y<pMesh->numOfVertices; y++)
+					if (E_local[x][y]){
+						neighVis[i].edges.push_back(x);
+						neighVis[i].edges.push_back(y);
+					}
+
+
 			neighVis[i].visNormals[0] = n;
 			neighVis[i].visNormals[1] = ev1;
 			neighVis[i].visNormals[2] = ev2;
@@ -400,10 +407,10 @@ Array2D<bool> DeleunayTriangulator::computeLocalTriangulation(int i, PCTMeshGrap
 			//neighVis[i].pointsInTangentPlane = pointsInPlane;
 			neighVis[i].isE_local_visualize = true;
 
-			delete[] pointsInPlane;
-			delete[] neighPoints;
-
 		}
+
+		//delete[] pointsInPlane;
+		//delete[] neighPoints;
 
 		nor[0] = n.x;
 		nor[1] = n.y;
