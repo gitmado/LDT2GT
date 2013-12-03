@@ -1,4 +1,4 @@
-// This is the main DLL file.
+﻿// This is the main DLL file.
 
 #include "PointCloudTriangulation.h"
 
@@ -150,6 +150,83 @@ void DeleunayTriangulator::computeGlobalTriangulationFromPoints(int numOfPoints,
 			}
 		}
 	}
+
+	// chose which orientation of normals is correct
+	/////////////////////////////////////////////////////////////
+
+	// find most top vertex and orient unit normals that it is pointing out of aabb
+	float maxtop = FLT_MIN;
+	float mintop = FLT_MAX;
+
+	int maxidx = -1;
+	int minidx = -1;
+
+	for (int i=0; i<pMesh->numOfVertices; i++){
+
+		if (pMesh->pVerts[i].y > maxtop){
+			maxtop = pMesh->pVerts[i].y;
+			maxidx = i;
+		}
+
+		if (pMesh->pVerts[i].y < mintop){
+			mintop = pMesh->pVerts[i].y;
+			minidx = i;
+		}
+	}
+
+	PCTCVector3 aabb_axis = pMesh->pVerts[maxidx] - pMesh->pVerts[minidx];
+	PCTCVector3 maxnorm = PCTCVector3((*normals)[maxidx * 3], (*normals)[maxidx * 3 + 1], (*normals)[maxidx * 3 + 2]);
+
+	if (Dot(aabb_axis, pMesh->pVerts[maxidx] + maxnorm) > 0){
+		// keep normal, it is oriented fine
+	} else {
+		// swap normal orientation
+		maxnorm = maxnorm * -1;
+	}
+
+	(*normals)[maxidx * 3] = maxnorm.x;
+	(*normals)[maxidx * 3 + 1] = maxnorm.y;
+	(*normals)[maxidx * 3 + 2] = maxnorm.z;
+
+	// distribute normal orientation over surafece
+
+	int verticesChanged = 1;
+
+	bool * vertexOrientation = new bool[pMesh->numOfVertices];
+	for (int i=0; i<pMesh->numOfVertices; i++){
+		vertexOrientation[i] = false;
+	}
+	vertexOrientation[maxidx] = true;
+
+	while (verticesChanged < pMesh->numOfVertices){
+		// iterate all vertices and change if neighbour is oriented
+		for (int i=0; i<pMesh->numOfVertices; i++){
+			for (int j=0; j<pMesh->numOfVertices; j++){
+				if (E_global[i][j] && vertexOrientation[j]){
+					
+					PCTCVector3 normal_i((*normals)[i * 3], (*normals)[i * 3 + 1], (*normals)[i * 3 + 2]);
+					PCTCVector3 normal_j((*normals)[j * 3], (*normals)[j * 3 + 1], (*normals)[j * 3 + 2]);
+
+					if (Dot(normal_i, normal_j) > 0){
+						// keep normal, it is oriented fine
+					} else {
+						// swap normal orientation
+						(*normals)[i * 3] = -(*normals)[i * 3];
+						(*normals)[i * 3 + 1] = -(*normals)[i * 3 + 1];
+						(*normals)[i * 3 + 2] = -(*normals)[i * 3 + 2];
+					}
+
+					 vertexOrientation[i] = true;
+					 verticesChanged++;
+				}					
+			}		
+		}
+	}
+
+
+	delete[] vertexOrientation;
+
+	/////////////////////////////////////////////////////////////////
 
 	*indices = new int[v_indices.size()];
 	for (int i=0; i<v_indices.size(); i++){
