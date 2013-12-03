@@ -4,21 +4,21 @@ PointCloudTriangulation.cpp(12): warning C4305: '=' : truncation from 'double' t
 PointCloudTriangulation.cpp(54): warning C4018: '<' : signed/unsigned mismatch
 PointCloudTriangulation.cpp(77): warning C4018: '<' : signed/unsigned mismatch
 PointCloudTriangulation.cpp(132): warning C4018: '<' : signed/unsigned mismatch
-PointCloudTriangulation.cpp(243): warning C4018: '<' : signed/unsigned mismatch
-PointCloudTriangulation.cpp(455): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-PointCloudTriangulation.cpp(455): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-PointCloudTriangulation.cpp(458): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-PointCloudTriangulation.cpp(458): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-PointCloudTriangulation.cpp(461): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-PointCloudTriangulation.cpp(461): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-PointCloudTriangulation.cpp(569): warning C4018: '<' : signed/unsigned mismatch
-PointCloudTriangulation.cpp(570): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-PointCloudTriangulation.cpp(576): warning C4018: '<' : signed/unsigned mismatch
+PointCloudTriangulation.cpp(245): warning C4018: '<' : signed/unsigned mismatch
+PointCloudTriangulation.cpp(457): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+PointCloudTriangulation.cpp(457): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+PointCloudTriangulation.cpp(460): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+PointCloudTriangulation.cpp(460): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+PointCloudTriangulation.cpp(463): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+PointCloudTriangulation.cpp(463): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+PointCloudTriangulation.cpp(571): warning C4018: '<' : signed/unsigned mismatch
+PointCloudTriangulation.cpp(572): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
 PointCloudTriangulation.cpp(578): warning C4018: '<' : signed/unsigned mismatch
-PointCloudTriangulation.cpp(593): warning C4018: '<' : signed/unsigned mismatch
-PointCloudTriangulation.cpp(601): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-PointCloudTriangulation.cpp(628): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-PointCloudTriangulation.cpp(705): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+PointCloudTriangulation.cpp(580): warning C4018: '<' : signed/unsigned mismatch
+PointCloudTriangulation.cpp(595): warning C4018: '<' : signed/unsigned mismatch
+PointCloudTriangulation.cpp(603): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+PointCloudTriangulation.cpp(630): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+PointCloudTriangulation.cpp(707): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
 LINK : warning LNK4068: /MACHINE not specified; defaulting to X86
 .NETFramework,Version=v4.0.AssemblyAttributes.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
 AssemblyInfo.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
