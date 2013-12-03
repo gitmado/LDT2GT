@@ -226,6 +226,10 @@ void DeleunayTriangulator::computeGlobalTriangulationFromPoints(int numOfPoints,
 
 	delete[] vertexOrientation;
 
+	for (int i=0; i<pMesh->numOfVertices; i++){
+		neighVis[i].visNormals[0] = PCTCVector3((*normals)[i * 3], (*normals)[i * 3 + 1], (*normals)[i * 3 + 2]);
+	}
+
 	/////////////////////////////////////////////////////////////////
 
 	*indices = new int[v_indices.size()];
